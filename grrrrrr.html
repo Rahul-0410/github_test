@@ -1,0 +1,70 @@
+<html>
+<head>
+<title></title>
+<style>
+.item1{
+grid-area:header;
+}
+.item2{
+grid-area:introduction;
+}
+.item3{
+grid-area:context;
+}
+.item4{
+grid-area:portfolio;
+}
+.item5{
+grid-area:footer;
+}
+.container{
+display:grid;
+gap:10px;
+grid-template-areas:
+'header header header header header context'
+'introduction introduction introduction introduction introduction context'
+'portfolio portfolio portfolio portfolio portfolio portfolio '
+'footer footer footer footer footer footer ';
+background:red;
+padding:10px;
+}
+.container > div{
+background-color: rgba(255, 255, 255, 0.8);
+text-align: center;
+padding: 20px 0;
+font-size: 30px;
+}
+@media(max-width:500px){
+.container{
+grid-template-areas:'header header header header '
+'context context context context '
+'introduction introduction introduction introduction'
+'portfolio portfolio portfolio portfolio '
+'footer footer footer footer';
+}
+}
+</style>
+<script>
+function getDate(){
+document.getElementById("p1").innerHTML= Date();
+}
+
+
+</script>
+</head>
+<body>
+<div class="container">
+<div class="item1">Header</div>
+<div class="item2">Introduction</div>
+<div class="item3">Context</div>
+<div class="item4">Portfolio</div>
+<div class="item5">Footer</div>
+</div>
+<p id="p1"></p>
+<button onclick="getDate()">ClickME</button>
+
+
+
+
+</body>
+</html>
